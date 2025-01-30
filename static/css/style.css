@@ -1,0 +1,880 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+:root {
+    --primary: rgba(211,65,63,1);
+    --secondary: rgb(152, 0, 0);
+    --accent: #e74c3c;
+    --light: #f5f6fa;
+    --dark: #440a0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.transparent-button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.transparent-button:hover {
+    background-color: white;
+    color: var(--secondary);
+}
+
+.header {
+    background-image: url("/static/imgs/header/header.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    transform: translate3d(0px, 0px, 0px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o espaço verticalmente */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajuste o último valor (0.4) para controlar a escuridão */
+    z-index: 1;
+}
+
+/* Garante que o conteúdo fique sobre a camada escura */
+.header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.top-bar {
+    background-color: var(--secondary);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Criar um container para os textos centrais */
+.header h2.subtitle,
+.header p.title {
+    font-family: Oswald;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    margin: 0; /* Remove as margens padrão */
+}
+
+.header h2.subtitle {
+    font-size: 20pt;
+    line-height: 1.23;
+    font-weight: 400;
+    margin-bottom: 10px; /* Espaço entre o subtítulo e o título */
+}
+
+.header p.title {
+    font-size: 38pt;
+    line-height: 1.23;
+    font-weight: 400;
+}
+
+/* Adicionar um container para agrupar os textos centrais */
+.header-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px; /* Adiciona um pouco de padding */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    margin: 3rem 0;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.content-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.content-list li {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.content-list li.opções::before {
+    display: none;
+}
+
+.content-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232ecc71"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>');
+    background-size: contain;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.whatsapp-button {
+    background-color: rgba(211,65,63,1);;
+}
+
+.price-section {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f6f8fa, #e9ecef);
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.discount {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 1rem 0;
+}
+
+.call-to-action {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.call-to-action h2 {
+    margin-bottom: 1.5rem;
+}
+
+.call-to-action .discount {
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.call-to-action .cta-button {
+    margin: 1.5rem auto;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+}
+
+.call-to-action .contact-info {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto;
+    line-height: 1.6;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1rem;
+    background: var(--secondary);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.faq-answer {
+    padding: 1rem;
+    display: none;
+    background: white;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.final-cta {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+ }
+ 
+ .final-cta h2,
+ .final-cta h3 {
+    margin-bottom: 1.5rem;
+ }
+ 
+ .final-cta .discount {
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 400px;
+ }
+ 
+ .final-cta .cta-button {
+    margin: 1.5rem auto;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+ }
+ 
+ .final-cta .contact-info {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto;
+    line-height: 1.6;
+ }
+ 
+ .final-cta .whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+ }
+ 
+ .final-cta .whatsapp-button i {
+    font-size: 1.2rem;
+ }
+
+ .preview-section {
+    margin-bottom: 1rem; /* Reduz a margem inferior */
+
+}
+
+.preview-section .carousel:last-child {
+    margin-bottom: -30px; /* Remove a margem inferior do último carrossel */
+}
+
+.preview-title {
+    font-weight: bold;
+    margin-top: 2rem; /* Ajuste o espaço entre os títulos */
+    margin-bottom: 1rem; /* Ajuste o espaço entre o título e o carrossel */
+}
+
+ .carousel {
+    position: relative;
+    margin: 1rem 0;
+    padding: 1rem 1rem 3rem 1rem; /* Aumentando o padding inferior */
+    border-radius: 10px;
+}
+
+.carousel img.img1 {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-left: 130px;
+    display: block;
+    border-radius: 5px;
+}
+
+.carousel img.img2car {
+    margin-left: 90px;
+    max-width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 0;
+}
+
+.carousel img.img3car {
+    margin-left: 90px;
+    max-width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 0;
+}
+
+.carousel img.img4car {
+    margin-left: 60px;
+    max-width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 0;
+}
+
+.carousel img.img5car {
+    margin-left: 50px;
+    max-width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 0;
+}
+
+.carousel img.img6car {
+    margin-left: 50px;
+    max-width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 0;
+}
+
+.carousel img.img7car {
+    margin-left: 50px;
+    max-width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 0;
+}
+
+.carousel img.img8car {
+    margin-left: 90px;
+    max-width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 0;
+}
+
+
+.carousel img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    
+}
+
+.carousel-caption {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+}
+
+.legend {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.legend-item {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.legend-item:before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+}
+
+.green { color: #2ecc71; }
+.yellow { color: #f1c40f; }
+.red { color: #e74c3c; }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.carousel-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#captionimg1.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 200px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+#img2car.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 100px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+#img3car.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 190px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+#img4car.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 160px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+
+#img5car.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 100px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+#img6car.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 130px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+#img7car.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 130px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+#img8car.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    margin-left: 180px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+.caption {
+    background: transparent;
+    color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: static; /* Removendo o posicionamento absoluto */
+    transform: none; /* Removendo a transformação */
+    margin-bottom: 20px; /* Espaço entre a caption e os dots */
+}
+
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  .carousel-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .prev {
+    left: 1rem;
+  }
+  
+  .next {
+    right: 1rem;
+  }
+  
+  .carousel-dots {
+    position: absolute;
+    bottom: 3rem; /* Ajustando a posição */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background: rgb(0, 0, 0);
+  }
+  
+  .slide-counter {
+    display: none;
+    position: absolute;
+    bottom: 0.5rem; /* Ajustando a posição */
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+  
+  .carousel-caption {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+  }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+    
+    .price-tag {
+        font-size: 2rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+   }
+
+   .carousel-button {
+    padding: 0.5rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    }
+
+    /* Modificações para o carrossel em mobile */
+    .carousel-container {
+        max-width: 100%; /* Ocupa toda a largura disponível */
+        padding: 0; /* Remove o padding lateral */
+    }
+
+    .carousel {
+        padding: 0 0 3rem 0; /* Remove padding lateral, mantém apenas o padding inferior */
+        margin: 1rem 0; /* Reduz as margens */
+    }
+
+    .carousel img.img1 {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img2car {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img3car {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img4car {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img5car {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img6car {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img7car {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img8car {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img.img1 {
+        margin-left: 0px;
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0;
+    }
+
+    .carousel img {
+        max-width: 100%; /* Imagem ocupa toda a largura do container */
+        height: auto;
+        border-radius: 0; /* Opcional: remove o border-radius em mobile */
+    }
+
+    #captionimg1.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+
+    #img2car.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+    
+    #img3car.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+    
+    #img4car.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+    
+    
+    #img5car.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+    
+    #img6car.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+    
+    #img7car.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+    
+    #img8car.caption {
+        background: transparent;
+        color: black; /* Mudando para preto já que não está mais sobreposto à imagem */
+        font-size: 14px;
+        margin-left: 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: static; /* Removendo o posicionamento absoluto */
+        transform: none; /* Removendo a transformação */
+        margin-bottom: 20px; /* Espaço entre a caption e os dots */
+    }
+    
+
+    .preview-section {
+        margin-bottom: 0.5rem; /* Reduz ainda mais em dispositivos móveis */
+    }
+
+    .slide-counter {
+        display: none;
+    }
+
+    .prev {
+        display: none;
+    }
+
+    .next {
+        display: none;
+    }
+
+}
