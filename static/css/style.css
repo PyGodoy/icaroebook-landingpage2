@@ -312,6 +312,15 @@ h2 {
 
 }
 
+.preview-section h2 {
+    text-align: center;
+}
+
+.highlight-text {
+    text-align: center;
+    font-weight: bold;
+}
+
 .preview-section .carousel:last-child {
     margin-bottom: -30px; /* Remove a margem inferior do último carrossel */
 }
