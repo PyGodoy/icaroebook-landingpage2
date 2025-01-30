@@ -93,11 +93,20 @@ body {
     margin: 0; /* Remove as margens padrão */
 }
 
+
 .header h2.subtitle {
     font-size: 20pt;
     line-height: 1.23;
     font-weight: 400;
     margin-bottom: 10px; /* Espaço entre o subtítulo e o título */
+}
+
+.red-underline {
+    width: 500px;
+    height: 10px;
+    background-color: var(--primary);
+    margin: 20px auto;
+    border-radius: 4px;
 }
 
 .header p.title {
