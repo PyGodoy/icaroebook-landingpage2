@@ -714,6 +714,13 @@ h2 {
     font-size: 1rem;
     }
 
+    .discount {
+        color: var(--accent);
+        font-weight: bold;
+        font-size: 18px;
+        margin: 1rem 0;
+    }
+
     /* Modificações para o carrossel em mobile */
     .carousel-container {
         max-width: 100%; /* Ocupa toda a largura disponível */
